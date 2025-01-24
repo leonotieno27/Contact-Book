@@ -75,7 +75,7 @@ class Contacts:
         with open(filename, 'r') as file_object:
             content = file_object.readlines()
 
-        new_content = [line for line in content if line.split('|')[2] != target]
+        new_content = [line for line in content if line.split('|')[2] != target] #if phone number is not equal to new number
 
         if len(content) == len(new_content):
             print("Contact not found.")
@@ -95,7 +95,7 @@ class Contacts:
             content = file_object.readlines()
 
         updated = False
-        for i, line in enumerate(content):
+        for i, line in enumerate(content):  #iterate through the list
             if line.split('|')[2] == target:
                 print("\nContact Found:")
                 fname, lname, phone_number, email = line.strip().split('|')
